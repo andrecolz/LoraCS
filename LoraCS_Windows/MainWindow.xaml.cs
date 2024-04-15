@@ -23,6 +23,17 @@ namespace LoraCS_win
         public MainWindow()
         {
             InitializeComponent();
+            NavigateToLoginPage();
+        }
+
+        public void NavigateToLoginPage()
+        {
+            mainContent.Content = new UserInfo();
+        }
+
+        private void CloseButtonClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

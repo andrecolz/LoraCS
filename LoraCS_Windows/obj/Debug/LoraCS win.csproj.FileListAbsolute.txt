@@ -1,0 +1,24 @@
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\LoraCS win.exe.config
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\LoraCS win.exe
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\LoraCS win.pdb
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\HandyControl.dll
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\HandyControl.xml
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.csproj.AssemblyReference.cache
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.csproj.SuggestedBindingRedirects.cache
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\MainWindow.g.cs
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\App.g.cs
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win_MarkupCompile.cache
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win_MarkupCompile.lref
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\App.baml
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\MainWindow.baml
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.g.resources
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS_win.Properties.Resources.resources
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.csproj.GenerateResource.cache
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.csproj.CopyComplete
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.exe
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\LoraCS win.pdb
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserInfo.g.cs
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserInfo.baml
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserClient.g.cs
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserClient.baml

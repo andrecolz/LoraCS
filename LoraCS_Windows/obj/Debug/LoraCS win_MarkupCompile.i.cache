@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Andre\Documents\LoraCS\LoraCS win\obj\Debug\
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\
 LoraCS_win
 none
 false
 DEBUG;TRACE
-C:\Users\Andre\Documents\LoraCS\LoraCS win\App.xaml
-1219584333
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\App.xaml
+3-2084294620
 
-6-502434485
-13-1310406943
-MainWindow.xaml;
+81371630476
+152116359546
+MainWindow.xaml;UserClient.xaml;UserInfo.xaml;
 
 True
 
