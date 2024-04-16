@@ -1,13 +1,18 @@
-﻿<UserControl x:Class="LoraCS_win.UserClient"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoraCS_win"
-             mc:Ignorable="d" Width="1000" Height="600">
-    <Grid Width="1000" Height="600" Background="#FF31363F">
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,10,787,87" Background="#FFEEEEEE"/>
-        <Button Content="ADD CONTACT" HorizontalAlignment="Left" Margin="10,518,0,0" VerticalAlignment="Top" Height="31" Width="203" Background="#FFA5DD9B" BorderBrush="#FF8ECC83" FontSize="14" FontWeight="Bold"/>
+             xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="LoraCS_win.UserClient"
+             mc:Ignorable="d" Width="1000" Height="591.04">
+    <Grid Width="1000" Background="#FF31363F" Height="591.04">
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="24,24,773,112" Background="#FFF4EEE0"/>
+        <Button x:Name="add_btn" Content="ADD" HorizontalAlignment="Left" Margin="24,484,0,0" VerticalAlignment="Top" Height="52" Width="98" Background="#FFA5DD9B" BorderBrush="#FF8ECC83" FontSize="14" FontWeight="Bold" Click="add_btn_Click"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="292,24,52,112" Background="#FFCBE4DE"/>
+        <TextBox HorizontalAlignment="Left" Margin="292,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="573" Height="52" SelectionBrush="{x:Null}"/>
+        <Button x:Name="snd_btn" Content="SEND" HorizontalAlignment="Left" Margin="870,484,0,0" VerticalAlignment="Top" Height="52" Width="78" Background="#FF1FACB5" BorderBrush="#FF1FACB5" FontWeight="Bold" FontSize="15"/>
+        <Button x:Name="rmv_btn" Content="REMOVE" HorizontalAlignment="Left" Margin="129,484,0,0" VerticalAlignment="Top" Height="52" Width="98" Background="#FFC84B31" BorderBrush="#FFC84B31" FontSize="14" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>

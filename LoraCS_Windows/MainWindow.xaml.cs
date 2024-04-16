@@ -23,6 +23,7 @@ namespace LoraCS_win
         public MainWindow()
         {
             InitializeComponent();
+            KeyDown += MainWindow_KeyDown;
             NavigateToLoginPage();
         }
 
@@ -34,6 +35,24 @@ namespace LoraCS_win
         private void CloseButtonClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                MessageBoxResult result = MessageBox.Show("Do you want to close the program?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    Application.Current.Shutdown();
+                }
+            }
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

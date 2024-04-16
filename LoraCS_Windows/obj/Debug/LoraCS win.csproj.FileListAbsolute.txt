@@ -22,3 +22,5 @@ C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserInfo.g.cs
 C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserInfo.baml
 C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserClient.g.cs
 C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\UserClient.baml
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\AddUser.g.cs
+C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\obj\Debug\AddUser.baml

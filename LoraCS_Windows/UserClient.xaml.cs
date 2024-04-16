@@ -24,5 +24,11 @@ namespace LoraCS_win
         {
             InitializeComponent();
         }
+
+        private void add_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Window addusr = new AddUser();
+            addusr.Show();
+        }
     }
 }
