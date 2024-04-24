@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,39 +21,39 @@ namespace LoraCS_win
     /// </summary>
     public partial class MainWindow : Window
     {
+        ESPController econtroller = new ESPController();
         public MainWindow()
         {
             InitializeComponent();
-            KeyDown += MainWindow_KeyDown;
-            NavigateToLoginPage();
+            Task.Run(() => initializeService());
         }
 
-        public void NavigateToLoginPage()
+        public void signinPage()
         {
-            mainContent.Content = new UserInfo();
+            mainContent.Content = new UserInfo(mainContent);
         }
 
-        private void CloseButtonClick(object sender, RoutedEventArgs e)
+        public void usrclPage()
         {
-            Close();
+            mainContent.Content = new UserClient(mainContent, new User("s", 1,1,1,1,"s"));
         }
 
-        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        public async Task initializeService()
         {
-            if (e.Key == Key.Escape)
+            if (File.Exists(@"C:\LoraCS\info.json"))
             {
-                MessageBoxResult result = MessageBox.Show("Do you want to close the program?", "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-                if (result == MessageBoxResult.Yes)
+                var isConnected = await Task.Run(() => econtroller.createConnection("COM3"));
+                if (isConnected)
                 {
-                    Application.Current.Shutdown();
+                    Dispatcher.Invoke(() => usrclPage());
+                } else
+                {
+                    Dispatcher.Invoke(() => signinPage());
                 }
+            } else
+            {
+                Dispatcher.Invoke(() => signinPage());
             }
-        }
-
-        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
         }
     }
 }

@@ -20,9 +20,13 @@ namespace LoraCS_win
     /// </summary>
     public partial class UserClient : UserControl
     {
-        public UserClient()
+        ContentControl mainWindow;
+        User mainU;
+        public UserClient(ContentControl mw, User mu)
         {
             InitializeComponent();
+            this.mainWindow = mw;
+            this.mainU = mu;
         }
 
         private void add_btn_Click(object sender, RoutedEventArgs e)

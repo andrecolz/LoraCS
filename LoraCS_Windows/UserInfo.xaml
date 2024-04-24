@@ -7,16 +7,19 @@
              xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="LoraCS_win.UserInfo"
              mc:Ignorable="d" Width="1000" Height="591.04">
 
-    <Grid Background="#FF31363F" Width="1000" Height="591.04">
-        <hc:TextBox x:Name="username_txt" HorizontalAlignment="Center" Margin="0,168,0,0" TextWrapping="Wrap" Text="USERNAME" VerticalAlignment="Top" Width="212" Height="44" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" FontStyle="Italic" MaxLength="16" MaxLines="1"/>
-        <Label Content="ADDL" HorizontalAlignment="Left" Margin="394,228,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="32" Width="64" HorizontalContentAlignment="Left"/>
-        <hc:TextBox x:Name="addl_txt" HorizontalAlignment="Left" Margin="474,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="32" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1"/>
-        <Label Content="ADDH" HorizontalAlignment="Left" Margin="394,266,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
-        <hc:TextBox x:Name="addh_txt" HorizontalAlignment="Left" Margin="474,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="30" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1"/>
-        <Label Content="CHAN" HorizontalAlignment="Left" Margin="394,302,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
-        <hc:ComboBox x:Name="chan_opz" HorizontalAlignment="Left" Margin="474,302,0,0" VerticalAlignment="Top" Width="132" Background="#FFDDE6ED" Height="30"/>
-        <Button x:Name="save_button" Content="SAVE" Margin="0,346,0,0" VerticalAlignment="Top" Width="212" FontSize="14" FontWeight="Bold" Background="#FF03C988" BorderBrush="#FF78A083" Height="32" Click="save_button_Click"/>
-
-        <ContentControl x:Name="usinfContent"/>
-    </Grid>
+    <ContentControl x:Name="usinfContent">
+        <Grid Background="#FF31363F" Width="1000" Height="591.04">
+            <hc:TextBox x:Name="username_txt" HorizontalAlignment="Center" Margin="0,168,0,0" TextWrapping="Wrap" Text="USERNAME" VerticalAlignment="Top" Width="212" Height="44" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" FontStyle="Italic" MaxLength="16" MaxLines="1" GotFocus="username_txt_GotFocus"/>
+            <Label Content="ADDL" HorizontalAlignment="Left" Margin="394,228,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="32" Width="64" HorizontalContentAlignment="Left"/>
+            <hc:TextBox x:Name="addl_txt" HorizontalAlignment="Left" Margin="474,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="32" UndoLimit="16" FontSize="16" TextAlignment="Center" FontWeight="Bold" MaxLength="3" MaxLines="1" TextChanged="addl_txt_TextChanged" Background="#FFDDE6ED"/>
+            <Label Content="ADDH" HorizontalAlignment="Left" Margin="394,266,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
+            <hc:TextBox x:Name="addh_txt" HorizontalAlignment="Left" Margin="474,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="30" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1" TextChanged="addh_txt_TextChanged"/>
+            <Label Content="CHAN" HorizontalAlignment="Left" Margin="394,302,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
+            <hc:ComboBox x:Name="chan_opz" HorizontalAlignment="Left" Margin="474,302,0,0" VerticalAlignment="Top" Width="132" Background="#FFDDE6ED" Height="30" SelectionChanged="chan_opz_SelectionChanged" FontSize="16" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            
+            <Button x:Name="save_button" Content="SAVE" Margin="0,381,0,0" VerticalAlignment="Top" Width="212" FontSize="14" FontWeight="Bold" Background="#FF03C988" BorderBrush="#FF78A083" Height="32" Click="save_button_Click" IsEnabled="False"/>
+            <hc:ComboBox x:Name="port_cmb" HorizontalAlignment="Left" Margin="474,339,0,0" VerticalAlignment="Top" Width="132" Background="#FFDDE6ED" Height="30" FontSize="16" FontWeight="Bold" SelectionChanged="port_cmb_SelectionChanged" HorizontalContentAlignment="Center"/>
+            <Label Content="PORT" HorizontalAlignment="Left" Margin="394,339,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
+        </Grid>
+    </ContentControl>
 </UserControl>

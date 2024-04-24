@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace LoraCS_win
 {
-    internal class Friends
+    public class Friends
     {
+        public int nFriends;
+        public List<User> users;
+
+        public Friends()
+        {
+            users = new List<User>();
+            nFriends = 0;
+        }
     }
 }

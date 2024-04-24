@@ -11,6 +11,7 @@ connManager::connManager() : e220ttl(&Serial2, 21, 13, 12, UART_BPS_RATE_9600) {
 void connManager::read(String msg) {
   if(msg == "connesso"){
     status = true;
+	Serial.println("ok");
   } 
   if(msg == "confg"){
 	setConfg(40, 45, 20, false);

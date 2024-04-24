@@ -6,13 +6,15 @@
         xmlns:local="clr-namespace:LoraCS_win"
         xmlns:hc="clr-namespace:HandyControl.Controls;assembly=HandyControl"
 
-        MouseLeftButtonDown="Window_MouseLeftButtonDown"
         mc:Ignorable="d"
         ResizeMode="NoResize"
         
         Title="MainWindow" Width="1000" Background="#FF31363F" Height="607">
+    <ContentControl x:Name="mainContent">
         <Grid Margin="0,0,0,0" Height="591.04">
-            <ContentControl x:Name="mainContent"/>
+            <Label Content="LoraCS" Margin="0,28,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="122" Width="580" FontWeight="Bold" FontSize="90"/>
+            <hc:LoadingCircle HorizontalAlignment="Center" Margin="0,372,0,0" VerticalAlignment="Top" Height="106" Width="104" DotDiameter="8"/>
         </Grid>
+    </ContentControl>
 
 </Window>
