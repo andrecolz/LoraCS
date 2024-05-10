@@ -7,12 +7,29 @@
              xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="LoraCS_win.UserClient"
              mc:Ignorable="d" Width="1000" Height="591.04">
     <Grid Width="1000" Background="#FF31363F" Height="591.04">
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="24,24,773,112" Background="#FFF4EEE0"/>
+        <ListBox x:Name="friendbox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="24,24,773,112" Background="#FFE8DFCA" SelectionChanged="friendbox_SelectionChanged" />
         <Button x:Name="add_btn" Content="ADD" HorizontalAlignment="Left" Margin="24,484,0,0" VerticalAlignment="Top" Height="52" Width="98" Background="#FFA5DD9B" BorderBrush="#FF8ECC83" FontSize="14" FontWeight="Bold" Click="add_btn_Click"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="292,24,52,112" Background="#FFCBE4DE"/>
-        <TextBox HorizontalAlignment="Left" Margin="292,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="573" Height="52" SelectionBrush="{x:Null}"/>
-        <Button x:Name="snd_btn" Content="SEND" HorizontalAlignment="Left" Margin="870,484,0,0" VerticalAlignment="Top" Height="52" Width="78" Background="#FF1FACB5" BorderBrush="#FF1FACB5" FontWeight="Bold" FontSize="15"/>
+        <Button x:Name="send_btn" Content="SEND" HorizontalAlignment="Left" Margin="870,484,0,0" VerticalAlignment="Top" Height="52" Width="78" Background="#FF1FACB5" BorderBrush="#FF1FACB5" FontWeight="Bold" FontSize="15" Click="snd_btn_Click"/>
         <Button x:Name="rmv_btn" Content="REMOVE" HorizontalAlignment="Left" Margin="129,484,0,0" VerticalAlignment="Top" Height="52" Width="98" Background="#FFC84B31" BorderBrush="#FFC84B31" FontSize="14" FontWeight="Bold"/>
 
+        <ListBox x:Name="messagebox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="292,24,52,112" Background="#FFCBE4DE">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <ContentPresenter/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <TextBox x:Name="msg_txt" HorizontalAlignment="Left" Margin="292,484,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="573" Height="52" SelectionBrush="{x:Null}" KeyDown="msg_txt_KeyDown"/>
+        
     </Grid>
 </UserControl>

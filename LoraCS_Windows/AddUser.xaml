@@ -10,14 +10,14 @@
         Title="AddUser" Height="300" Width="300" Background="#FF31363F">
     <Grid>
         <Label Content="ADDL" HorizontalAlignment="Left" Margin="34,77,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="32" Width="64" HorizontalContentAlignment="Left"/>
-        <hc:TextBox x:Name="addl_txt" HorizontalAlignment="Left" Margin="114,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="32" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1"/>
+        <hc:TextBox x:Name="addl_txt" HorizontalAlignment="Left" Margin="114,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="32" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1" TextChanged="addl_txt_TextChanged"/>
         <Label Content="ADDH" HorizontalAlignment="Left" Margin="34,115,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
-        <hc:TextBox x:Name="addh_txt" HorizontalAlignment="Left" Margin="114,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="30" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1"/>
+        <hc:TextBox x:Name="addh_txt" HorizontalAlignment="Left" Margin="114,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="30" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="3" MaxLines="1" TextChanged="addh_txt_TextChanged"/>
         <Label Content="CHAN" HorizontalAlignment="Left" Margin="34,151,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="30" Width="68" HorizontalContentAlignment="Left"/>
-        <hc:ComboBox x:Name="chan_opz" HorizontalAlignment="Left" Margin="114,151,0,0" VerticalAlignment="Top" Width="132" Background="#FFDDE6ED" Height="30"/>
-        <Button x:Name="add_button" Content="ADD" Margin="35,195,0,0" VerticalAlignment="Top" Width="212" FontSize="14" FontWeight="Bold" Background="#FF03C988" BorderBrush="#FF78A083" Height="32" HorizontalAlignment="Left"/>
+        <hc:ComboBox x:Name="chan_opz" HorizontalAlignment="Left" Margin="114,151,0,0" VerticalAlignment="Top" Width="132" Background="#FFDDE6ED" Height="30" SelectionChanged="chan_opz_SelectionChanged"/>
+        <Button x:Name="add_button" Content="ADD" Margin="35,195,0,0" VerticalAlignment="Top" Width="212" FontSize="14" FontWeight="Bold" Background="#FF03C988" BorderBrush="#FF78A083" Height="32" HorizontalAlignment="Left" Click="add_button_Click" IsEnabled="False"/>
         <Label Content="NAME" HorizontalAlignment="Left" Margin="34,40,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF9DB2BF" FontWeight="Bold" FontSize="14" Height="32" Width="64" HorizontalContentAlignment="Left"/>
-        <hc:TextBox x:Name="name_txt" HorizontalAlignment="Left" Margin="114,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="32" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="16" MaxLines="1"/>
+        <hc:TextBox x:Name="username_txt" HorizontalAlignment="Left" Margin="114,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" Height="32" UndoLimit="16" FontSize="16" TextAlignment="Center" Background="#FFDDE6ED" FontWeight="Bold" MaxLength="16" MaxLines="1" TextChanged="username_txt_TextChanged"/>
 
     </Grid>
 </Window>

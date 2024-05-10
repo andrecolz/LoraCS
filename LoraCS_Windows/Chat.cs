@@ -8,12 +8,12 @@ namespace LoraCS_win
 {
     public class Chat
     {
-        public int friendId;
+        public User friend;
         public List<Message> Messages;
 
-        public Chat(int friendId)
+        public Chat(User fr)
         {
-            this.friendId = friendId;
+            friend = fr;
             Messages = new List<Message>();
         }
 

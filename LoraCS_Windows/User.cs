@@ -24,5 +24,10 @@ namespace LoraCS_win
             this.ID = iD;
             this.port = port;
         }
+
+        public String toString1()
+        {
+            return name + ";" + addl + ";" + addh + ";" + chan;
+        }
     }
 }

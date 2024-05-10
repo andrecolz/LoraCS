@@ -1,17 +1,23 @@
-﻿using System;
+﻿using HandyControl.Controls;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace LoraCS_win
 {
@@ -20,19 +26,160 @@ namespace LoraCS_win
     /// </summary>
     public partial class UserClient : UserControl
     {
+        private DispatcherTimer timer;
         ContentControl mainWindow;
         User mainU;
-        public UserClient(ContentControl mw, User mu)
+        ESPController econtroller;
+
+        List<Chat> chatList = new List<Chat>();
+        int fselect = 0;
+        String fromLora;
+        
+        public UserClient(ContentControl mw, User mu, ESPController ec)
         {
             InitializeComponent();
+            viewChat();
             this.mainWindow = mw;
             this.mainU = mu;
+            this.econtroller = ec;
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Tick += saveData;
+            timer.Start();
+
+            Thread t = new Thread(new ThreadStart(readLora));
+            t.IsBackground = true;
+            t.Start();
+        }
+
+        public void readLora()
+        {
+            while (true)
+            {
+                fromLora = econtroller.read();
+            }
+        }
+
+        public void saveData(object sender, EventArgs e)
+        {
+            string dir = @"C:\LoraCS\friend";
+            if (Directory.Exists(dir))
+            {
+                for(int i = 0; i < chatList.Count; i++)
+                {
+                    string json = JsonConvert.SerializeObject(chatList[i], Newtonsoft.Json.Formatting.Indented);
+                    System.IO.File.WriteAllText(@"C:\LoraCS\friend\" + chatList[i].friend.name + ".json", json);
+                }
+            } else
+            {
+                Directory.CreateDirectory(dir);
+            }
+        }
+
+        public void viewChat()
+        {
+            string dir = @"C:\LoraCS\friend";
+            if (Directory.Exists(dir))
+            {
+                friendbox.Items.Clear();
+                chatList.Clear();
+                string[] fileNames = Directory.GetFiles(dir);
+
+                foreach (string fileName in fileNames)
+                {
+                    try
+                    {
+                        string jsonString = File.ReadAllText(fileName);
+                        Chat chat = JsonConvert.DeserializeObject<Chat>(jsonString);
+                        chatList.Add(chat);
+
+                        friendbox.Items.Add(chat.friend.name);
+                    }
+                    catch
+                    {
+                        Console.WriteLine("errore con: " + fileName);
+                    }
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(dir);
+            }
         }
 
         private void add_btn_Click(object sender, RoutedEventArgs e)
         {
-            Window addusr = new AddUser();
+            AddUser addusr = new AddUser();
+            addusr.Closed += viewAddUser;
             addusr.Show();
+        }
+
+        private void viewAddUser(object sender, EventArgs e)
+        {
+            viewChat();
+        }
+
+        private void snd_btn()
+        {
+            if (!String.IsNullOrWhiteSpace(msg_txt.Text) && fselect != 0)
+            {
+                chatList[fselect].Messages.Add(new Message(msg_txt.Text, DateTime.Now, true));
+                addMsgR(msg_txt.Text);
+                econtroller.sendMsg(msg_txt.Text, chatList[fselect].friend);
+                msg_txt.Text = "";
+            }
+        }
+
+        public void addMsgR(String text)
+        {
+            ChatBubble chatBubble = new ChatBubble();
+            chatBubble.FontSize = 14;
+            chatBubble.Content = text;
+            messagebox.Items.Add(chatBubble);
+            messagebox.ScrollIntoView(chatBubble);
+        }
+
+        public void addMsgL(String text)
+        {
+            ChatBubble chatBubble = new ChatBubble();
+            chatBubble.FontSize = 14;
+            chatBubble.FlowDirection = FlowDirection.RightToLeft;
+            chatBubble.HorizontalAlignment = HorizontalAlignment.Left;
+            chatBubble.Content = text;
+            messagebox.Items.Add(chatBubble);
+            messagebox.ScrollIntoView(chatBubble);
+        }
+
+        private void friendbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            fselect = friendbox.SelectedIndex;
+            messagebox.Items.Clear();
+            List<Message> messageList = chatList[fselect].Messages;
+            foreach (Message msg in messageList)
+            {
+                if (msg.mittente)
+                {
+                    addMsgR(msg.msg);
+                }
+                else
+                {
+                    addMsgL(msg.msg);
+                }
+            }
+        }
+
+        private void msg_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                snd_btn();
+            }
+        }
+
+        private void snd_btn_Click(object sender, RoutedEventArgs e)
+        {
+            snd_btn();
         }
     }
 }

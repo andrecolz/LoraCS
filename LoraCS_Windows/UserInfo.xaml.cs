@@ -133,7 +133,7 @@ namespace LoraCS_win
                 System.IO.File.WriteAllText(@"C:\LoraCS\info.json", json);
             }
 
-            mainWindow.Content = new UserClient(mainWindow, mainU);            
+            mainWindow.Content = new UserClient(mainWindow, mainU, econtroller);            
         }
 
         private void addl_txt_TextChanged(object sender, TextChangedEventArgs e)

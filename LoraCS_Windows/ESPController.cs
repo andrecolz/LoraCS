@@ -12,6 +12,8 @@ namespace LoraCS_win
 {
     public class ESPController
     {
+        SerialPort serialPort;
+        public String lastMsg;
         public String port;
 
         public ESPController() 
@@ -23,10 +25,10 @@ namespace LoraCS_win
         {
             try
             {
-                SerialPort serialPort = new SerialPort(port, 9600); // Imposta la velocità di comunicazione desiderata
-                serialPort.WriteTimeout = 2000;
-                serialPort.ReadTimeout = 2000;
+                serialPort = new SerialPort(port, 9600); // Imposta la velocità di comunicazione desiderata
+                serialPort.WriteTimeout = 2500;
                 serialPort.Open();
+                Thread.Sleep(200);
                 serialPort.Write("connesso"); // Invia un comando di test all'ESP32
                 Thread.Sleep(500);
                 String response = "";
@@ -35,11 +37,9 @@ namespace LoraCS_win
                     response = serialPort.ReadLine();
                     if (response.Contains("ok\r"))
                     {
-                        serialPort.Close();
                         return true;
                     }
                 }
-                serialPort.Close();
             }
             catch (Exception ex)
             {
@@ -56,9 +56,36 @@ namespace LoraCS_win
             return false;
         }
 
-        public void sendMsg()
+        public bool sendMsg(String msg, User friend)
         {
+            try
+            {
+                String toSend = "send;" + friend.toString1();
+                serialPort.Write(toSend);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
+        public String read()
+        {
+            String msg = serialPort.ReadLine();
+
+            if(msg != lastMsg)
+            {
+                return msg;
+            }
+            lastMsg = msg;
+            return "";
+        }
+
+        public bool setConfg(int ADDL, int ADDH, int CHAN)
+        {
+            serialPort.Write("setconfg;" + ADDL + ";" + ADDH + ";" + CHAN + ";" + true);
+            return false;
         }
     }
 }

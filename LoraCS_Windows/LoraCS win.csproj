@@ -95,7 +95,6 @@
     </Compile>
     <Compile Include="Chat.cs" />
     <Compile Include="ESPController.cs" />
-    <Compile Include="Friends.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserClient.xaml.cs">

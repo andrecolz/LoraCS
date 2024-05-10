@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace LoraCS_win
         {
             InitializeComponent();
             Task.Run(() => initializeService());
+            
         }
 
         public void signinPage()
@@ -33,19 +35,21 @@ namespace LoraCS_win
             mainContent.Content = new UserInfo(mainContent);
         }
 
-        public void usrclPage()
+        public void usrclPage(User mainU)
         {
-            mainContent.Content = new UserClient(mainContent, new User("s", 1,1,1,1,"s"));
+            mainContent.Content = new UserClient(mainContent, mainU, econtroller);
         }
 
         public async Task initializeService()
         {
             if (File.Exists(@"C:\LoraCS\info.json"))
             {
-                var isConnected = await Task.Run(() => econtroller.createConnection("COM3"));
+                string jsonString = File.ReadAllText(@"C:\LoraCS\info.json");
+                User mainU = JsonConvert.DeserializeObject<User>(jsonString);
+                var isConnected = await Task.Run(() => econtroller.createConnection(mainU.port));
                 if (isConnected)
                 {
-                    Dispatcher.Invoke(() => usrclPage());
+                    Dispatcher.Invoke(() => usrclPage(mainU));
                 } else
                 {
                     Dispatcher.Invoke(() => signinPage());
