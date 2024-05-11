@@ -32,7 +32,7 @@ namespace LoraCS_win
         ESPController econtroller;
 
         List<Chat> chatList = new List<Chat>();
-        int fselect = 0;
+        int fselect = -1;
         String fromLora;
         
         public UserClient(ContentControl mw, User mu, ESPController ec)
@@ -58,6 +58,29 @@ namespace LoraCS_win
             while (true)
             {
                 fromLora = econtroller.read();
+                String[] input = fromLora.Split(';');
+                if (input[0] == "newMessage") //type;name;addl;addh;chan;message;
+                {
+                    int i = 0;
+                    foreach(Chat schat in chatList)
+                    {
+                        if(schat.friend.addl.ToString() == input[2] && schat.friend.addh.ToString() == input[3] && schat.friend.chan.ToString() == input[4])
+                        {
+                            chatList[i].Messages.Add(new Message(input[5], DateTime.Now, true));
+                            addMsgL(input[5]);
+                        } else
+                        {
+                            User newFriend = new User(input[1], Convert.ToByte(input[2]), Convert.ToByte(input[3]), Convert.ToByte(input[4]), 0, "");
+                            Chat chat = new Chat(newFriend);
+                            string json = JsonConvert.SerializeObject(chat, Newtonsoft.Json.Formatting.Indented);
+                            System.IO.File.WriteAllText(@"C:\LoraCS\friend\" + newFriend.name + ".json", json);
+                        }
+                        i++;
+                    }
+                } else if (input[0] == "")
+                {
+
+                }
             }
         }
 
@@ -122,7 +145,7 @@ namespace LoraCS_win
 
         private void snd_btn()
         {
-            if (!String.IsNullOrWhiteSpace(msg_txt.Text) && fselect != 0)
+            if (!String.IsNullOrWhiteSpace(msg_txt.Text) && fselect != -1)
             {
                 chatList[fselect].Messages.Add(new Message(msg_txt.Text, DateTime.Now, true));
                 addMsgR(msg_txt.Text);

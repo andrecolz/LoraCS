@@ -44,3 +44,48 @@ C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\System.Threading.Tasks.
 C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\System.ValueTuple.xml
 C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andre\Documents\LoraCS\LoraCS_Windows\bin\Debug\Newtonsoft.Json.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\LoraCS win.exe.config
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\LoraCS win.exe
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\LoraCS win.pdb
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\HandyControl.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\Newtonsoft.Json.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Buffers.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Memory.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Numerics.Vectors.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Text.Encodings.Web.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Text.Json.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.ValueTuple.dll
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\HandyControl.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\Newtonsoft.Json.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Buffers.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Memory.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Numerics.Vectors.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Text.Encodings.Web.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Text.Json.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\Nuova cartella\LoraCS_Windows\bin\Debug\System.ValueTuple.xml
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.csproj.AssemblyReference.cache
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\AddUser.g.cs
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\MainWindow.g.cs
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\UserClient.g.cs
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\UserInfo.g.cs
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\App.g.cs
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win_MarkupCompile.cache
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win_MarkupCompile.lref
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\App.baml
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\AddUser.baml
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\MainWindow.baml
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\UserClient.baml
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\UserInfo.baml
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.g.resources
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS_win.Properties.Resources.resources
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.csproj.GenerateResource.cache
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.csproj.CoreCompileInputs.cache
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.csproj.CopyComplete
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.exe
+E:\Nuova cartella\LoraCS_Windows\obj\Debug\LoraCS win.pdb
