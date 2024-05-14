@@ -27,3 +27,7 @@ Una volta fatto verrà aggiunto il nostro contatto, l'interfaccia semplice e int
 - La rete su cui si basa è peer-to-peer e non mesh
 - Danneggiamento dei pacchetti (non sempre i messaggi arrivano a destinazione se la distanza è elevata)
 - Non ho ancora creato un'app per android
+
+# La board da me realizzata
+<a href="https://ibb.co/0FzBn2c"><img src="https://i.ibb.co/YyVDNQ3/20240514-163601.jpg" alt="20240514-163601" border="0"></a>
+Ho realizzato due di queste board per testare il funzionamento, nel mio caso i mie ESP32 erano dotati di display anche se non è necessario.
