@@ -29,5 +29,5 @@ Una volta fatto verrà aggiunto il nostro contatto, l'interfaccia semplice e int
 - Non ho ancora creato un'app per android
 
 # La board da me realizzata
-<a href="https://ibb.co/0FzBn2c"><img src="https://i.ibb.co/YyVDNQ3/20240514-163601.jpg" alt="20240514-163601" border="0"></a>
+<img src="https://i.ibb.co/YyVDNQ3/20240514-163601.jpg" alt="20240514-163601" border="0">
 Ho realizzato due di queste board per testare il funzionamento, nel mio caso i mie ESP32 erano dotati di display anche se non è necessario.
